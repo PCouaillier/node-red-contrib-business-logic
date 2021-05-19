@@ -1,0 +1,51 @@
+<script type="text/html" data-template-name="business-logic">
+    <div class="form-row">
+        <label for="node-input-eventName"><i class="fa fa-tag"></i> Event name</label>
+        <input type="text" id="node-input-eventName" placeholder="MyEvent">
+    </div>
+    <div class="form-row">
+        <label for="node-input-logicPath"><i class="fa fa-share-square-o "></i> Logic CommandBus path</label>
+        <br/>
+        <input type="text" id="node-input-logicPath" placeholder="./src/logic-bus.js">
+    </div>
+    <div class="form-tips">
+        <b>How to use:</b>
+        <p>if empty the eventName defaults to <i>${msg.eventName}</i></p>
+        <p>Path to module starting with "./" where current directory node current path.</p>
+        <p>the module should contains : </p>
+        <p><i>
+            const commandBus = new CommmandBus();<br/>
+            commandBus.addEventHandler('MyEvent', (eventName, payload) => ...);<br/>
+            ...<br/>
+            module.exports = commandBus.getEventHandler()</i></p>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="business-logic">
+    <p>Some useful help text to introduce the node.</p>
+    <h3>Outputs</h3>
+        <dl class="message-properties">
+        <dt>payload
+            <span class="property-type">string | buffer</span>
+        </dt>
+    <h3>Details</h3>
+    <p>Some more information about the node.</p>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('business-logic',{
+        category: 'common',
+        color: '#a6bbcf',
+        defaults: {
+            logicPath: { value: '' },
+            eventName: { value: '' },
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'function.svg',
+        label: function() {
+            return (this.logicPath || 'business-logic')
+            + (this.eventName ? ' ' + this.eventName : '');
+        },
+    });
+</script>

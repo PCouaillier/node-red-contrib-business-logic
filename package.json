@@ -1,0 +1,13 @@
+{
+    "name": "node-red-contrib-business-logic",
+    "main": "dist/CommandBus.js",
+    "types": "dist/CommandBus.d.ts",
+    "node-red": {
+        "nodes": {
+            "business-logic": "node-red/business-logic.js"
+        }
+    },
+    "devDependencies": {
+        "typescript": "^4.2.4"
+    }
+}
