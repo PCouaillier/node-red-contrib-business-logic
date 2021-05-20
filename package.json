@@ -1,6 +1,6 @@
 {
     "name": "node-red-contrib-business-logic",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author": "PCouaillier",
     "license": "ISC",
     "main": "dist/CommandBus.js",
