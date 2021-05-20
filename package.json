@@ -5,6 +5,9 @@
     "license": "ISC",
     "main": "dist/CommandBus.js",
     "types": "dist/CommandBus.d.ts",
+    "keywords": [
+        "node-red"
+    ],
     "bugs": {
         "url": "https://github.com/PCouaillier/node-red-contrib-business-logic/issues"
     },
