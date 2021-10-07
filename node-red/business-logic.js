@@ -23,6 +23,7 @@ module.exports = function(RED) {
         try {
             bl = require(absoluteLogicPath);
         } catch (error) {
+            console.error(error);
             this.status({ fill: 'red', shape: 'ring', text: 'Error while loading the file' });
             return;
         }
