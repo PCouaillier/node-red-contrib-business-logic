@@ -12,3 +12,12 @@ The JS file must export a CommandBus (defined by this package).
 
 With this CommandBus the node will be able send events and pass response inside the msg.
 
+Exemple:
+```
+// bl.js
+const { CommandBus } = require('node-red-contrib-business-logic');
+const commandBus = new CommmandBus();
+commandBus.addEventHandler('MyEvent', async (eventName, payload) => ...);
+...
+module.exports = commandBus;
+```
